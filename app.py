@@ -1,6 +1,7 @@
 from flask import Flask, render_template,request
+from flask_ngrok import run_with_ngrok
 from wordcloud import WordCloud
-import matplotlib.pyplot as plt 
+import matplotlib.pyplot as plt
 from nlppreprocess import NLP
 import arxiv
 import pandas as pd
@@ -14,6 +15,8 @@ from transformers import pipeline
 nlp = pipeline('question-answering')
 app = Flask(__name__)
 obj = NLP()
+
+run_with_ngrok(app)
 
 @app.after_request
 def set_response_headers(response):
@@ -130,4 +133,5 @@ def upload():
     #Moving forward code
     return render_template('upload.html');
 if __name__ == "__main__":
-    app.run(debug=True,use_reloader=False)
+    # app.run(debug=True,use_reloader=False)
+    app.run()
