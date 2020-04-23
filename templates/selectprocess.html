@@ -58,7 +58,7 @@
                         <p>Ask questions from the uploaded PDF!</p>
                     </div>
                     <div class="card-block">
-                        <form action="upload.html">
+                        <form action="{{ url_for('render_qna') }}" method="post">
                             <button class="btn btn-primary">Proceed</button>
                         </form>
                         
