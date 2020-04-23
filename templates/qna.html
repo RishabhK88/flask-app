@@ -39,7 +39,7 @@
                 <div class="head-text">
                     <h2>QnA</h2>
                 </div>
-                <form>
+                <form action="{{ url_for('ques_ans') }}" method="post">
                     <div class="form-group">
                         <label for="ques">Question?</label>
                         <input type="text" class="form-control" id="ques" name="ques" aria-describedby="queshelp"
@@ -53,9 +53,7 @@
                 <!-- answer -->
                 <div class="card">
                     Answer : <br><br>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia voluptate itaque aspernatur
-                    aliquam eos, rerum officia voluptas nesciunt corporis dolorem natus debitis architecto, ipsa sequi
-                    recusandae reiciendis blanditiis optio iusto!
+                    {{answer}}
                 </div>
             </div>
         </div>
