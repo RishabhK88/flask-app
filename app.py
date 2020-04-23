@@ -56,6 +56,10 @@ def wcloud():
     plt.savefig('static/images/new_plot.png')
     return render_template('wcloud.html',name = 'new_plot', url ='static/images/new_plot.png')
 
+@app.route('/render_qna',methods=['POST'])
+def render_qna():   
+    return render_template('qna.html')
+
 @app.route('/ques_ans',methods=['GET', 'POST'])
 def ques_ans():
     file = open("doc.txt","r") 
